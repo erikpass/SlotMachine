@@ -657,10 +657,22 @@ function flashPaytable(index) {
   //payTable[0]
   let duration = 3000
 
-  payTable[index][0].classList.toggle('payTableOptionFlashing')
+ /*  payTable[index][0].classList.toggle('payTableOptionFlashing')
   setTimeout(() => {
     payTable[index][0].classList.toggle('payTableOptionFlashing') 
-  }, duration);
+  }, duration); */
+  let counter = 0;
+  let interval = '';
+  interval = setInterval(() => {
+    if (counter < duration) {
+      counter += duration/20
+      payTable[index][0].classList.toggle('payTableOptionFlashing') 
+    }else{
+      payTable[index][0].classList.remove('payTableOptionFlashing')
+    }
+
+
+  }, duration/20);
   
 }
 
