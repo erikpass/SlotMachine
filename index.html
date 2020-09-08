@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SlotMachine</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="payTable row">
+        <div class="col-md-4">
+          <div class="payTableOption cherryTop">
+            <img src="reel/Cherry.png" />
+            <img src="reel/Cherry.png" />
+            <img src="reel/Cherry.png" />
+            Top = $2000
+          </div>
+          <div class="payTableOption cherryMiddle">
+            <img src="reel/Cherry.png" />
+            <img src="reel/Cherry.png" />
+            <img src="reel/Cherry.png" />
+            Center = $1000
+          </div>
+          <div class="payTableOption cherryBottom">
+            <img src="reel/Cherry.png" />
+            <img src="reel/Cherry.png" />
+            <img src="reel/Cherry.png" />
+            Bottom = $4000
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="payTableOption any7">
+            <img src="reel/7.png" />
+            <img src="reel/7.png" />
+            <img src="reel/7.png" />
+            $150
+          </div>
+          <div class="payTableOption cherryAnd7">
+            <img src="reel/7.png" />
+            <img src="reel/Cherry.png" />
+            <img src="reel/7.png" />
+            Any $75
+          </div>
+          <div class="payTableOption 3BAR">
+            <img src="reel/3xBAR.png" />
+            <img src="reel/3xBAR.png" />
+            <img src="reel/3xBAR.png" />
+            $50
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="payTableOption 2BAR">
+            <img src="reel/2xBAR.png" />
+            <img src="reel/2xBAR.png" />
+            <img src="reel/2xBAR.png" />
+            20$
+          </div>
+          <div class="payTableOption BAR">
+            <img src="reel/BAR.png" />
+            <img src="reel/BAR.png" />
+            <img src="reel/BAR.png" />
+            10$
+          </div>
+          <div class="payTableOption anyBARS">
+            <img src="reel/3xBAR.png" />
+            <img src="reel/BAR.png" />
+            <img src="reel/2xBAR.png" />
+            Any $5
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <button
+            id="runStopButton"
+            type="button"
+            class="btn btn-primary spinButton"
+          >
+            SPIN!
+          </button>
+        </div>
+
+        <div class="col">
+          <div class="reels">
+            <div id="top-line" class="lineMarker lineMarkerHide"></div>
+            <div id="center-line" class="lineMarker lineMarkerHide"></div>
+            <div id="bottom-line" class="lineMarker lineMarkerHide"></div>
+            <ul class="reel" id="reel1">
+              <img src="reel/3xBAR.png" />
+              <img src="reel/BAR.png" />
+              <img src="reel/2xBAR.png" />
+              <img src="reel/7.png" />
+              <img src="reel/Cherry.png" />
+            </ul>
+            <ul class="reel" id="reel2">
+              <img src="reel/3xBAR.png" />
+              <img src="reel/BAR.png" />
+              <img src="reel/2xBAR.png" />
+              <img src="reel/7.png" />
+              <img src="reel/Cherry.png" />
+            </ul>
+            <ul class="reel" id="reel3">
+              <img src="reel/3xBAR.png" />
+              <img src="reel/BAR.png" />
+              <img src="reel/2xBAR.png" />
+              <img src="reel/7.png" />
+              <img src="reel/Cherry.png" />
+            </ul>
+          </div>
+        </div>
+
+        <div class="col">
+          <form>
+            <label for="mode" style="margin-top: 15%">Choose mode:</label>
+            <select name="mode" id="modeSelector" class="form-control">
+              <option selected>Random</option>
+              <option>Fixed</option>
+            </select>
+          </form>
+
+          <form id="reel1form">
+            <label for="reel1symbol">Choose First Symbol:</label>
+            <select name="reel1symbol" id="reel1symbol" class="form-control">
+              <option selected>BAR</option>
+              <option>2xBAR</option>
+              <option>3xBAR</option>
+              <option>7</option>
+              <option>Cherry</option>
+            </select>
+
+            <label for="reel1position">Position:</label>
+            <select
+              name="reel1position"
+              id="reel1position"
+              class="form-control"
+            >
+              <option selected>Top</option>
+              <option>Middle</option>
+              <option>Bottom</option>
+            </select>
+          </form>
+
+          <form id="reel2form">
+            <label for="reel2symbol">Choose Second Symbol:</label>
+            <select name="reel2symbol" id="reel2symbol" class="form-control">
+              <option selected>BAR</option>
+              <option>2xBAR</option>
+              <option>3xBAR</option>
+              <option>7</option>
+              <option>Cherry</option>
+            </select>
+
+            <label for="reel2position">Position:</label>
+            <select
+              name="reel2position"
+              id="reel2position"
+              class="form-control"
+            >
+              <option selected>Top</option>
+              <option>Middle</option>
+              <option>Bottom</option>
+            </select>
+          </form>
+
+          <form id="reel3form">
+            <label for="reel3symbol">Choose Third Symbol:</label>
+            <select name="reel3symbol" id="reel3symbol" class="form-control">
+              <option selected>BAR</option>
+              <option>2xBAR</option>
+              <option>3xBAR</option>
+              <option>7</option>
+              <option>Cherry</option>
+            </select>
+
+            <label for="reel3position">Position:</label>
+            <select name="reel3position" id="reel3position" class="form-control">
+              <option selected>Top</option>
+              <option>Middle</option>
+              <option>Bottom</option>
+            </select>
+          </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label for="balDisplay">Balance:</label>
+          <input type="number" id="balanceDisplay" name="balDisplay" class="form-control">
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
